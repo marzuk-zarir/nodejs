@@ -1,0 +1,15 @@
+{
+    "prettier.semi": false,
+    "prettier.trailingComma": "none",
+    "editor.fontLigatures": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": ["comment"],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    }
+}
