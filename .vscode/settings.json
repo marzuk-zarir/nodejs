@@ -11,5 +11,8 @@
                 }
             }
         ]
+    },
+    "emmet.includeLanguages": {
+        "javascript": "html"
     }
 }
