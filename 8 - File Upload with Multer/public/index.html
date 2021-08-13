@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        </style>
+        <title>File upload</title>
+    </head>
+    <body>
+        <h1>Upload Single file</h1>
+        <form action="/single" method="post" enctype="multipart/form-data">
+            <input type="file" name="single-file" />
+            <input type="submit" value="Submit" />
+        </form>
+
+        <h1>Upload Multiple files</h1>
+        <form action="/multiple" method="post" enctype="multipart/form-data">
+            <input type="file" name="multiple-file" multiple />
+            <input type="submit" value="Submit" />
+        </form>
+
+        <h1>Upload Multiple files and fields</h1>
+        <form action="/multifield" method="post" enctype="multipart/form-data">
+            <input type="file" name="avatar" multiple />
+            <input type="file" name="gallery" multiple />
+            <input type="submit" value="Submit" />
+        </form>
+
+        <h1>Form data submit with multer</h1>
+        <form action="/form" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" />
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" />
+            </div>
+            <div>
+                <label for="time">Checkout time</label>
+                <input type="time" name="time" id="timee" />
+            </div>
+            <br />
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
