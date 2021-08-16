@@ -67,5 +67,7 @@
             "bold": false,
             "italic": false
         }
-    ]
+    ],
+    "htmlhint.enable": false,
+    "compile-hero.disable-compile-files-on-did-save-code": true
 }

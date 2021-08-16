@@ -1,0 +1,105 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/styles/style.css")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer)
+        title #{title}
+    body
+        .container
+            //- 1. Plain text print
+            h1 hello world
+
+            //- 2. Plain big text print in new line. We should use '.'
+            p.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis tempora
+                recusandae dolores, tium dolorem illo culpa officia dolorum hic cumque nesciunt,
+                iure molestiae optio quas ea molestias ipsa nulla amet?
+
+            //- 3. We can declare class with '.' and id with '#'
+            h1#headline This is pug template
+            p.lead.text-danger.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit
+
+            //- 4. No element by default 'div' element in pug
+            .box.box-green
+
+            //- 5. Pug attr declare in single braces
+            .w-50.mt-2
+                input(
+                    type="password"
+                    class="form-control"
+                    placeholder="Enter Your Password"
+                )
+
+            //- 6. Conditional attr
+            - const isChecked = true
+            input(type="checkbox" class="form-check-input" checked=isChecked)
+
+            //- 7. Inline style from js object
+            h2(style={ 'text-align': 'center', color: 'Green' }).
+                Lorem, ipsum dolor
+
+            //- 8. Image source from js object
+            img&attributes({
+                style: { width: '50%', height: '280px'  },
+                src: 'https://images.unsplash.com/photo-1629042388423-d7eb9acbfadc',
+                alt: 'Image'
+            })
+
+            br
+            br
+
+            //- 9. Dynamic image source
+            img(style={width: '50%', height: '280px'} src=image.src alt=image.alt)
+
+            br
+            br
+
+            //- 10. looping
+            //- looping also works on object. as object, property is index and obj value is value
+            ol
+                each p, i in program
+                    li index is #{i}, value is #{p}
+
+            ul
+                for p, i in program
+                    li #{i} - #{p}
+
+            - let n = 0
+            ul
+                while n < 4
+                    li #{n++}
+
+            //- 11. If else  and case conditional statement
+
+            if auth
+                p.lead.text-primary.
+                    User is authenticated
+            else
+                p.lead.text-danger.
+                    User is not authenticated
+
+            - const friends = 10
+            case friends
+                when 0
+                    p you have no friends
+                when 1
+                    p you have a friend
+                default
+                    p you have #{friends} friends
+
+            //- 12. Interpolation
+
+            //- string interpolation
+            p.
+                Welcome, #{name}
+
+            //- tag interpolation
+            p.
+                Lorem ipsum dolor sit amet #[strong consectetur] adipisicing elit
+
+        div(style="margin-bottom: 200px")
