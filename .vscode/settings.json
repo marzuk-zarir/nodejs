@@ -1,6 +1,8 @@
 {
+    "workbench.colorTheme": "Dracula",
     "prettier.semi": false,
     "prettier.trailingComma": "none",
+    "editor.fontWeight": 100,
     "editor.fontLigatures": true,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -68,6 +70,5 @@
             "italic": false
         }
     ],
-    "htmlhint.enable": false,
-    "compile-hero.disable-compile-files-on-did-save-code": true
+    "htmlhint.enable": false
 }
